@@ -212,11 +212,11 @@ Internet-Draft                BGP Shutdown                 November 2016
 8.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, March 1997.
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <http://www.rfc-editor.org/info/rfc2119>.
 
-   [RFC3629]  Yergeau, F., "UTF-8, a transformation format of ISO
-              10646", STD 63, RFC 3629, DOI 10.17487/RFC3629, November
-              2003, <http://www.rfc-editor.org/info/rfc3629>.
+
 
 
 
@@ -226,8 +226,14 @@ Snijders, et al.          Expires May 17, 2017                  [Page 4]
 Internet-Draft                BGP Shutdown                 November 2016
 
 
-   [RFC4271]  Rekhter, Y., Li, T., and S. Hares, "A Border Gateway
-              Protocol 4 (BGP-4)", RFC 4271, January 2006.
+   [RFC3629]  Yergeau, F., "UTF-8, a transformation format of ISO
+              10646", STD 63, RFC 3629, DOI 10.17487/RFC3629, November
+              2003, <http://www.rfc-editor.org/info/rfc3629>.
+
+   [RFC4271]  Rekhter, Y., Ed., Li, T., Ed., and S. Hares, Ed., "A
+              Border Gateway Protocol 4 (BGP-4)", RFC 4271,
+              DOI 10.17487/RFC4271, January 2006,
+              <http://www.rfc-editor.org/info/rfc4271>.
 
    [RFC4486]  Chen, E. and V. Gillet, "Subcodes for BGP Cease
               Notification Message", RFC 4486, DOI 10.17487/RFC4486,
@@ -235,13 +241,13 @@ Internet-Draft                BGP Shutdown                 November 2016
 
 8.2.  Informative References
 
-   [RFC5424]  Gerhards, R., "The Syslog Protocol", RFC 5424, DOI
-              10.17487/RFC5424, March 2009,
+   [RFC5424]  Gerhards, R., "The Syslog Protocol", RFC 5424,
+              DOI 10.17487/RFC5424, March 2009,
               <http://www.rfc-editor.org/info/rfc5424>.
 
    [RFC7942]  Sheffer, Y. and A. Farrel, "Improving Awareness of Running
-              Code: The Implementation Status Section", BCP 205, RFC
-              7942, DOI 10.17487/RFC7942, July 2016,
+              Code: The Implementation Status Section", BCP 205,
+              RFC 7942, DOI 10.17487/RFC7942, July 2016,
               <http://www.rfc-editor.org/info/rfc7942>.
 
    [UTR36]    Davis, M. and M. Suignard, "Unicode Security
@@ -264,13 +270,7 @@ Authors' Addresses
    Email: job@ntt.net
 
 
-   Jakob Heitz
-   Cisco
-   170 West Tasman Drive
-   San Jose, CA  95054
-   USA
 
-   Email: jheitz@cisco.com
 
 
 
@@ -282,6 +282,15 @@ Snijders, et al.          Expires May 17, 2017                  [Page 5]
 Internet-Draft                BGP Shutdown                 November 2016
 
 
+   Jakob Heitz
+   Cisco
+   170 West Tasman Drive
+   San Jose, CA  95054
+   USA
+
+   Email: jheitz@cisco.com
+
+
    John Scudder
    Juniper Networks
    1194 N. Mathilda Ave
@@ -289,15 +298,6 @@ Internet-Draft                BGP Shutdown                 November 2016
    USA
 
    Email: jgs@juniper.net
-
-
-
-
-
-
-
-
-
 
 
 
