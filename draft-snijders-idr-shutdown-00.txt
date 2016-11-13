@@ -156,10 +156,10 @@ Internet-Draft                BGP Shutdown                 November 2016
 
 4.  IANA Considerations
 
-   Per this document, IANA is requested to assign a subcode symbolically
-   named "Shutdown Communication" in the "Cease NOTIFICATION message
-   subcodes" registry under the "Border Gateway Protocol (BGP)
-   Parameters" group.
+   Per this document, IANA is requested to assign a subcode named
+   "Shutdown Communication" in the "Cease NOTIFICATION message subcodes"
+   registry under the "Border Gateway Protocol (BGP) Parameters" group.
+
 
 
 
