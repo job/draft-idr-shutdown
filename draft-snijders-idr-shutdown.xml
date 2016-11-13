@@ -139,6 +139,18 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
                 "non-shortest form".
             </t>
             <t>
+                It is RECOMMENDED that a BGP speaker behave as though the
+                DampPeerOscillations attribute <xref target="RFC4271">BGP-4</xref>
+                were true for this peer when re-trying a BGP connection after
+                the speaker receives a Cease NOTIFICATION message with a
+                subcode of "Shutdown Communication.  An implementation SHOULD
+                impose an upper bound on the number of consecutive automatic
+                retries.  Once this bound is reached, the implementation would
+                stop re-trying any BGP connections until some administrative
+                intervention, i.e., set the AllowAutomaticStart attribute 
+                <xref target="RFC4271">BGP-4</xref> to FALSE.
+            </t>
+            <t>
                 Mechanisms concerning the reporting of information contained in
                 the Shutdown Communication are implementation specific but
                 SHOULD include methods such as <xref target="RFC5424">SYSLOG</xref>.
@@ -220,8 +232,8 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
         <references title="Normative References">
             <?rfc include="reference.RFC.2119"?>
             <?rfc include="reference.RFC.3629"?>
-            <?rfc include="reference.RFC.4486"?>
             <?rfc include="reference.RFC.4271"?>
+            <?rfc include="reference.RFC.4486"?>
         </references>
         <references title="Informative References">
             <?rfc include="reference.RFC.5424"?>
