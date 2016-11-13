@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd">
+<?rfc comments="yes"?>
+<?rfc compact="yes"?>
+<?rfc inline="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc subcompact="yes"?>
+<?rfc symrefs="yes"?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="3"?>
+<?rfc tocindent="yes"?>
+<?rfc tocompact="yes"?>
+
+<rfc category="std" docName="draft-snijders-idr-shutdown-message-00" ipr="trust200902">
+    <front>
+        <title>
+            BGP Cease Notification Shutdown Message
+        </title>
+
+        <author fullname="Job Snijders" initials="J." surname="Snijders">
+            <organization abbrev="NTT">NTT Communications</organization>
+            <address>
+                <postal>
+                    <street>Theodorus Majofskistraat 100</street>
+                    <code>1065 SZ</code>
+                    <city>Amsterdam</city>
+                    <country>NL</country>
+                </postal>
+                <email>job@ntt.net</email>
+            </address>
+        </author>
+
+    <author fullname="Jakob Heitz" initials="J." surname="Heitz">
+        <organization>Cisco</organization>
+        <address>
+            <postal>
+                <street>170 West Tasman Drive</street>
+                <city>San Jose</city>
+                <region>CA</region>
+                <code>95054</code>
+                <country>USA</country>
+            </postal>
+            <email>jheitz@cisco.com</email>
+        </address>
+    </author>
+
+        <date />
+
+        <area>Routing</area>
+        <workgroup>IDR</workgroup>
+        <keyword>BGP</keyword>
+        <keyword>cease</keyword>
+        <keyword>shutdown</keyword>
+
+        <abstract>
+            <t>
+                This document defines the BGP Cease NOTIFICATION message
+                "Shutdown Message" subcode for operators to transmit a short
+                freeform message to describe why a BGP session was shutdown.
+            </t>
+        </abstract>
+
+    <note title="Requirements Language">
+        <t>
+            The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+            "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in
+            this document are to be interpreted as described in
+            <xref target="RFC2119"/>.
+        </t>
+    </note>
+
+    </front>
+
+    <middle>
+        <section anchor="intro" title="Introduction">
+            <t>
+
+                It has been discovered that certain BGP Path Attribute values
+                have been used in BGP implementations which have been deployed
+                in the wild while not being assigned by the IANA for such
+                usage. This has led to deployment problems for new technologies
+                such as Large BGP Communities.
+            </t>
+            <t>
+                The squatting of values 30, 31, 129, 241, 242 and 243 has been
+                confirmed by the involved vendors or through source code
+                review.
+            </t>
+        </section>
+
+        <section anchor="iana" title="IANA Considerations">
+            <t>
+                Per this document, IANA is requested to assign a subcode called
+                "Shutdown Message" in the "BGP Cease NOTIFICATION message
+                subcodes" registry under the "Border Gateway Protocol (BGP)
+                Parameters" group. 
+            </t>
+        </section>
+
+        <section anchor="security" title="Security Considerations">
+            <t>
+                This document uses UTF-8 encoding for the Shutdown Message.
+                There are a number of security issues with UNICODE.  Any
+                implementer and operator is advised to review
+                <xref target="UNICODE-TR36">UNICODE TR36</xref> (UTR36) to
+                learn about these issues. This document guards against the
+                technical issues outlined in UTR36 by REQUIRING "shortest form"
+                encoding. However, the visual spoofing due to character
+                confusion still persists.  This document tries to minimize the
+                effects of visual spoofing by allowing UNICODE only where local
+                script is expected and needed.
+            </t>
+        </section>
+
+    </middle>
+
+    <back>
+
+        <references title="Normative References">
+            <?rfc include="reference.RFC.2119"?>
+            <?rfc include="reference.RFC.4486"?>
+        </references>
+        <references title="Informative References">
+            <reference anchor='UNICODE-TR36'>
+                <front>
+                <title>
+                    UNICODE Security Considerations
+                </title>
+                <author initials='M.' surname='Davis' fullname='Mark Davis'>
+                <author initials='M.' surname='Suignard' fullname='Michel Suignard'>
+                </front>
+        </references>
+
+        <section anchor="acknowledgements" title="Acknowledgements">
+            <t>
+                The author would like to gratefully acknowledge Tom Scholl,
+                David Freedman, and Jared Mauch.
+            </t>
+        </section>
+    </back>
+
+</rfc>
