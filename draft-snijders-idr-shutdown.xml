@@ -44,6 +44,20 @@
             </address>
         </author>
 
+		<author fullname="John Scudder" initials="J.S." surname="Scudder">
+			<organization abbrev="Juniper">Juniper Networks</organization>
+			<address>
+				<postal>
+					<street>1194 N. Mathilda Ave</street>
+					<city>Sunnyvale</city>
+					<region>CA</region>
+					<code>94089</code>
+					<country>USA</country>
+				</postal>
+				<email>jgs@juniper.net</email>
+			</address>
+		</author>
+
         <date />
 
         <area>Routing</area>
