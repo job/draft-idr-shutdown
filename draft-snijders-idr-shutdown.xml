@@ -94,18 +94,18 @@
                 session teardown in the network with a notice that was
                 transmitted via off-line methods such email or telephone calls.
                 This document specifies a mechanism to transmit a short
-                freeform UTF-8 message as part of a
-                <xref target="RFC4486">Cease NOTIFICATION message</xref> to
-                inform the peer why the BGP session is being shutdown.
+                freeform <xref target="RFC3629">UTF-8</xref> message as part
+		of a <xref target="RFC4486">Cease NOTIFICATION message</xref>
+		to inform the peer why the BGP session is being shutdown.
             </t>
         </section>
 
         <section anchor="message" title="Shutdown Communication">
             <t>
-                If an operator decides to terminate its peering with a BGP
+                If an BGP speaker decides to terminate its session with a BGP
                 neighbor, then the BGP speaker MAY send to the neighbor a
-                NOTIFICATION message with the Error Code Cease and the Error
-                Subcode TDB "Shutdown Communication" followed by a freeform
+                NOTIFICATION message with the Error Code "Cease" and the Error
+                Subcode TBD "Shutdown Communication" followed by a freeform
                 UTF-8 encoded string with a REQUIRED maximum length of 128
                 octets. The contents of the string are at the operator's
                 discretion.
@@ -126,36 +126,28 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
 </t>
             <t>
                 To support international characters, the Shutdown Communication
-                field MUST be encoded using <xref target="RFC3629">UTF-8</xref>.
+                field MUST be encoded using UTF-8.
             </t>
             <t>
-                The sending BGP speaker SHOULD avoid octet values below 32 (the
-                traditional US-ASCII control character range except DEL).  The
-                receiving BGP speaker MUST NOT fail if control characters are
-                present in the Shutdown Communication. For the reasons outlined
-                in <xref target="UTR36">UNICODE TR36</xref>, section 3.1, the
-                sending BGP speaker MUST encode messages in the "shortest form"
-                and the receiving peer MUST NOT interpret messages in the
-                "non-shortest form". A receiving BGP speaker MUST NOT interpret
-                invalid UTF-8 sequences.
+                The sending BGP speaker SHOULD avoid octet values below 32 
+		(control characters), however these values are legal.
+		Following <xref target="UTR36">UNICODE TR36</xref>, Sec 3.1, 
+		the sending BGP sepaker MUST encode messages in the "shortest form"
+		and MUST NOT interpret messages in the "non shortest form".
+		A receiving BGP speaker MUST NOT interpret invalid UTF-8 sequences.
             </t>
             <t>
-                It is RECOMMENDED that a BGP speaker behave as though the
-                DampPeerOscillations attribute <xref target="RFC4271">BGP-4</xref>
-                were true for this peer when re-trying a BGP connection after
-                the speaker receives a Cease NOTIFICATION message with a
-                subcode of "Shutdown Communication". An implementation SHOULD
-                impose an upper bound on the number of consecutive automatic
-                retries. Once this bound is reached, the implementation would
-                stop re-trying any BGP connections until some administrative
-                intervention, i.e., set the AllowAutomaticStart attribute 
-                <xref target="RFC4271">BGP-4</xref> to FALSE.
+		It is RECOMMENDED that a BGP speaker receiving a Shutdown
+		Communication observe retry behaviour in line with
+		the <xref target="RFC4486">RFC4486</xref> behaviour for 
+		"Administrative Shutdown" (sec 4.0).
             </t>
             <t>
                 Mechanisms concerning the reporting of information contained in
                 the Shutdown Communication are implementation specific but
                 SHOULD include methods such as <xref target="RFC5424">SYSLOG</xref>.
             </t>
+	
         </section>
 
         <section anchor="ops" title="Operational Considerations">
@@ -177,6 +169,13 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
             </t>
         </section>
 
+	<section anchor="error" title="Error Handling">
+            <t>
+		Any erroneous or malformed Shutdown Communication received SHOULD 
+		be logged for the attention of the operator and then MAY be 
+		discarded.
+            </t>
+	</section>
 
         <section anchor="iana" title="IANA Considerations">
             <t>
