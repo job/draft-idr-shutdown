@@ -71,7 +71,7 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Shutdown Communication  . . . . . . . . . . . . . . . . . . .   2
    3.  Operational Considerations  . . . . . . . . . . . . . . . . .   3
-   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   3
+   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
    6.  Implementation status - RFC EDITOR: REMOVE BEFORE PUBLICATION   4
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   4
@@ -135,6 +135,16 @@ Internet-Draft                BGP Shutdown                 November 2016
    messages in the "shortest form" and the receiving peer MUST NOT
    interpret messages in the "non-shortest form".
 
+   It is RECOMMENDED that a BGP speaker behave as though the
+   DampPeerOscillations attribute BGP-4 [RFC4271] were true for this
+   peer when re-trying a BGP connection after the speaker receives a
+   Cease NOTIFICATION message with a subcode of "Shutdown Communication.
+   An implementation SHOULD impose an upper bound on the number of
+   consecutive automatic retries.  Once this bound is reached, the
+   implementation would stop re-trying any BGP connections until some
+   administrative intervention, i.e., set the AllowAutomaticStart
+   attribute BGP-4 [RFC4271] to FALSE.
+
    Mechanisms concerning the reporting of information contained in the
    Shutdown Communication are implementation specific but SHOULD include
    methods such as SYSLOG [RFC5424].
@@ -151,16 +161,6 @@ Internet-Draft                BGP Shutdown                 November 2016
    the sender and receiver, followed by a brief human readable message
    regarding the work triggering the BGP session shutdown followed by an
    indication about the length of the maintenance.  The receiver can now
-   use the string 'VNOC-1-1438367390' to search in their email archive
-   to find more details.
-
-4.  IANA Considerations
-
-   Per this document, IANA is requested to assign a subcode named
-   "Shutdown Communication" in the "Cease NOTIFICATION message subcodes"
-   registry under the "Border Gateway Protocol (BGP) Parameters" group.
-
-
 
 
 
@@ -169,6 +169,15 @@ Snijders, et al.          Expires May 17, 2017                  [Page 3]
 
 Internet-Draft                BGP Shutdown                 November 2016
 
+
+   use the string 'VNOC-1-1438367390' to search in their email archive
+   to find more details.
+
+4.  IANA Considerations
+
+   Per this document, IANA is requested to assign a subcode named
+   "Shutdown Communication" in the "Cease NOTIFICATION message subcodes"
+   registry under the "Border Gateway Protocol (BGP) Parameters" group.
 
 5.  Security Considerations
 
@@ -210,6 +219,13 @@ Internet-Draft                BGP Shutdown                 November 2016
               DOI 10.17487/RFC2119, March 1997,
               <http://www.rfc-editor.org/info/rfc2119>.
 
+
+
+Snijders, et al.          Expires May 17, 2017                  [Page 4]
+
+Internet-Draft                BGP Shutdown                 November 2016
+
+
    [RFC3629]  Yergeau, F., "UTF-8, a transformation format of ISO
               10646", STD 63, RFC 3629, DOI 10.17487/RFC3629, November
               2003, <http://www.rfc-editor.org/info/rfc3629>.
@@ -218,13 +234,6 @@ Internet-Draft                BGP Shutdown                 November 2016
               Border Gateway Protocol 4 (BGP-4)", RFC 4271,
               DOI 10.17487/RFC4271, January 2006,
               <http://www.rfc-editor.org/info/rfc4271>.
-
-
-
-Snijders, et al.          Expires May 17, 2017                  [Page 4]
-
-Internet-Draft                BGP Shutdown                 November 2016
-
 
    [RFC4486]  Chen, E. and V. Gillet, "Subcodes for BGP Cease
               Notification Message", RFC 4486, DOI 10.17487/RFC4486,
@@ -261,15 +270,6 @@ Authors' Addresses
    Email: job@ntt.net
 
 
-   Jakob Heitz
-   Cisco
-   170 West Tasman Drive
-   San Jose, CA  95054
-   USA
-
-   Email: jheitz@cisco.com
-
-
 
 
 
@@ -282,6 +282,15 @@ Snijders, et al.          Expires May 17, 2017                  [Page 5]
 Internet-Draft                BGP Shutdown                 November 2016
 
 
+   Jakob Heitz
+   Cisco
+   170 West Tasman Drive
+   San Jose, CA  95054
+   USA
+
+   Email: jheitz@cisco.com
+
+
    John Scudder
    Juniper Networks
    1194 N. Mathilda Ave
@@ -289,15 +298,6 @@ Internet-Draft                BGP Shutdown                 November 2016
    USA
 
    Email: jgs@juniper.net
-
-
-
-
-
-
-
-
-
 
 
 
