@@ -143,9 +143,9 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
                 DampPeerOscillations attribute <xref target="RFC4271">BGP-4</xref>
                 were true for this peer when re-trying a BGP connection after
                 the speaker receives a Cease NOTIFICATION message with a
-                subcode of "Shutdown Communication.  An implementation SHOULD
+                subcode of "Shutdown Communication". An implementation SHOULD
                 impose an upper bound on the number of consecutive automatic
-                retries.  Once this bound is reached, the implementation would
+                retries. Once this bound is reached, the implementation would
                 stop re-trying any BGP connections until some administrative
                 intervention, i.e., set the AllowAutomaticStart attribute 
                 <xref target="RFC4271">BGP-4</xref> to FALSE.
