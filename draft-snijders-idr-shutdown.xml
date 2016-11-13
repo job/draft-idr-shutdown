@@ -92,8 +92,9 @@
                 neighbor, then the BGP speaker MAY send to the neighbor a
                 NOTIFICATION message with the Error Code Cease and the Error
                 Subcode TDB "Shutdown Communication" followed by a freeform
-                UTF-8 encoded string with a fixed length of 128 octets. The
-                contents of the string are at the operator's discretion.
+                UTF-8 encoded string with a REQUIRED maximum length of 128
+                octets. The contents of the string are at the operator's
+                discretion.
             </t>
 <t>
 The Shutdown Communication Cease NOTIFICATION message is encoded as following:
@@ -105,12 +106,8 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 |                   ... Shutdown Communication ...              | 
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                        ... continued ...                      | 
+|                              ...                              |  
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                        ... continued ...                      | 
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|       ... continued ...       |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ]]></artwork></figure>
 </t>
             <t>
@@ -119,15 +116,13 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
             </t>
             <t>
                 The sending BGP speaker SHOULD avoid octet values below 32 (the
-                traditional US-ASCII control character range except DEL) except
-                value 0 (US-ASCII NUL). The value 0 is used to pad the Shutdown
-                Communication up to 128 octets.  The receiving BGP speaker MUST
-                NOT fail if control characters are present in the Shutdown
-                Communication. For the reasons outlined in
-                <xref target="UTR36">UNICODE TR36</xref>, section 3.1, the
+                traditional US-ASCII control character range except DEL).  The
+                receiving BGP speaker MUST NOT fail if control characters are
+                present in the Shutdown Communication. For the reasons outlined
+                in <xref target="UTR36">UNICODE TR36</xref>, section 3.1, the
                 sending BGP speaker MUST encode messages in the "shortest form"
                 and the receiving peer MUST NOT interpret messages in the
-                "non-shortest form". 
+                "non-shortest form".
             </t>
             <t>
                 Mechanisms concerning the reporting of information contained in
@@ -167,16 +162,16 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
 
         <section anchor="security" title="Security Considerations">
             <t>
-                This document uses UTF-8 encoding for the Shutdown Message.
-                There are a number of security issues with UNICODE.  Any
-                implementer and operator is advised to review
-                <xref target="UTR36">UNICODE TR36</xref> to
-                learn about these issues. This document guards against the
-                technical issues outlined in UTR36 by REQUIRING "shortest form"
-                encoding. However, the visual spoofing due to character
-                confusion still persists.  This document tries to minimize the
-                effects of visual spoofing by allowing UNICODE only where local
-                script is expected and needed.
+                This document uses UTF-8 encoding for the Shutdown
+                Communication. There are a number of security issues with
+                UNICODE. Any implementer and operator is advised to review
+                <xref target="UTR36">UNICODE TR36</xref> to learn about these
+                issues. This document guards against the technical issues
+                outlined in UTR36 by REQUIRING "shortest form" encoding.
+                However, the visual spoofing due to character confusion still
+                persists. This document tries to minimize the effects of visual
+                spoofing by allowing UNICODE only where local script is
+                expected and needed.
             </t>
         </section>
 
