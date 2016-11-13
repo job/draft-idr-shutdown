@@ -5,8 +5,10 @@
 IDR                                                          J. Snijders
 Internet-Draft                                                       NTT
 Intended status: Standards Track                                J. Heitz
-Expires: May 16, 2017                                              Cisco
-                                                       November 12, 2016
+Expires: May 17, 2017                                              Cisco
+                                                              J. Scudder
+                                                                 Juniper
+                                                       November 13, 2016
 
 
    The Shutdown Communication BGP Cease Notification Message subcode
@@ -39,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 16, 2017.
+   This Internet-Draft will expire on May 17, 2017.
 
 Copyright Notice
 
@@ -48,16 +50,16 @@ Copyright Notice
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents
-   (http://trustee.ietf.org/license-info) in effect on the date of
-   publication of this document.  Please review these documents
 
 
 
-Snijders & Heitz          Expires May 16, 2017                  [Page 1]
+Snijders, et al.          Expires May 17, 2017                  [Page 1]
 
 Internet-Draft                BGP Shutdown                 November 2016
 
 
+   (http://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
@@ -107,9 +109,7 @@ Table of Contents
 
 
 
-
-
-Snijders & Heitz          Expires May 16, 2017                  [Page 2]
+Snijders, et al.          Expires May 17, 2017                  [Page 2]
 
 Internet-Draft                BGP Shutdown                 November 2016
 
@@ -165,7 +165,7 @@ Internet-Draft                BGP Shutdown                 November 2016
 
 
 
-Snijders & Heitz          Expires May 16, 2017                  [Page 3]
+Snijders, et al.          Expires May 17, 2017                  [Page 3]
 
 Internet-Draft                BGP Shutdown                 November 2016
 
@@ -221,7 +221,7 @@ Internet-Draft                BGP Shutdown                 November 2016
 
 
 
-Snijders & Heitz          Expires May 16, 2017                  [Page 4]
+Snijders, et al.          Expires May 17, 2017                  [Page 4]
 
 Internet-Draft                BGP Shutdown                 November 2016
 
@@ -277,4 +277,60 @@ Authors' Addresses
 
 
 
-Snijders & Heitz          Expires May 16, 2017                  [Page 5]
+Snijders, et al.          Expires May 17, 2017                  [Page 5]
+
+Internet-Draft                BGP Shutdown                 November 2016
+
+
+   John Scudder
+   Juniper Networks
+   1194 N. Mathilda Ave
+   Sunnyvale, CA  94089
+   USA
+
+   Email: jgs@juniper.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Snijders, et al.          Expires May 17, 2017                  [Page 6]
