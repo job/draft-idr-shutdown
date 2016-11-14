@@ -92,7 +92,7 @@ Table of Contents
 
 2.  Shutdown Communication
 
-   If an BGP speaker decides to terminate its session with a BGP
+   If a BGP speaker decides to terminate its session with a BGP
    neighbor, then the BGP speaker MAY send to the neighbor a
    NOTIFICATION message with the Error Code "Cease" and the Error
    Subcode TBD "Shutdown Communication" followed by a freeform UTF-8
