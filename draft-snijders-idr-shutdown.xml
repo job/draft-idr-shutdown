@@ -94,9 +94,9 @@
                 session teardown in the network with a notice that was
                 transmitted via off-line methods such email or telephone calls.
                 This document specifies a mechanism to transmit a short
-                freeform <xref target="RFC3629">UTF-8</xref> message as part
-		of a <xref target="RFC4486">Cease NOTIFICATION message</xref>
-		to inform the peer why the BGP session is being shutdown.
+                freeform <xref target="RFC3629">UTF-8</xref> message as part of
+                a <xref target="RFC4486">Cease NOTIFICATION message</xref> to
+                inform the peer why the BGP session is being shutdown.
             </t>
         </section>
 
@@ -129,18 +129,19 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
                 field MUST be encoded using UTF-8.
             </t>
             <t>
-                The sending BGP speaker SHOULD avoid octet values below 32 
-		(control characters), however these values are legal.
-		Following <xref target="UTR36">UNICODE TR36</xref>, Sec 3.1, 
-		the sending BGP sepaker MUST encode messages in the "shortest form"
-		and MUST NOT interpret messages in the "non shortest form".
-		A receiving BGP speaker MUST NOT interpret invalid UTF-8 sequences.
+                The sending BGP speaker SHOULD avoid octet values below 32
+                (control characters), however these values are legal.
+                Following <xref target="UTR36">UNICODE TR36</xref>, Sec 3.1,
+                the sending BGP sepaker MUST encode messages in the "shortest
+                form" and MUST NOT interpret messages in the "non shortest
+                form".  A receiving BGP speaker MUST NOT interpret invalid
+                UTF-8 sequences.
             </t>
             <t>
-		It is RECOMMENDED that a BGP speaker receiving a Shutdown
-		Communication observe retry behaviour in line with
-		the <xref target="RFC4486">RFC4486</xref> behaviour for 
-		"Administrative Shutdown" (sec 4.0).
+                It is RECOMMENDED that a BGP speaker receiving a Shutdown
+                Communication observe retry behaviour in line with the
+                <xref target="RFC4486">RFC4486</xref> behaviour for
+                "Administrative Shutdown" (sec 4.0).
             </t>
             <t>
                 Mechanisms concerning the reporting of information contained in
@@ -197,7 +198,8 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
                 However, the visual spoofing due to character confusion still
                 persists. This document tries to minimize the effects of visual
                 spoofing by allowing UNICODE only where local script is
-                expected and needed.
+                expected and needed, and by limiting the length of the Shutdown
+                Communication.
             </t>
         </section>
 
