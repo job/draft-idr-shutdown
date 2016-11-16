@@ -132,7 +132,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
                 The sending BGP speaker SHOULD avoid octet values below 32
                 (control characters), however these values are legal.
                 Following <xref target="UTR36">UNICODE TR36</xref>, Sec 3.1,
-                the sending BGP sepaker MUST encode messages in the "shortest
+                the sending BGP speaker MUST encode messages in the "shortest
                 form" and MUST NOT interpret messages in the "non shortest
                 form".  A receiving BGP speaker MUST NOT interpret invalid
                 UTF-8 sequences.
