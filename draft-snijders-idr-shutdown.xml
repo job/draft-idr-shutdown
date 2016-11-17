@@ -182,7 +182,10 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
 
         <section anchor="iana" title="IANA Considerations">
             <t>
-                This document has no IANA actions.
+                Per this document, IANA is requested to reference this document
+                at subcode "Administrative Shutdown" in the "Cease NOTIFICATION
+                message subcodes" registry under the "Border Gateway Protocol
+                (BGP) Parameters" group.
             </t>
         </section>
 
