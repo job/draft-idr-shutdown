@@ -11,10 +11,13 @@
 <?rfc tocindent="yes"?>
 <?rfc tocompact="yes"?>
 
-<rfc category="std" docName="draft-snijders-idr-shutdown-00" ipr="trust200902">
+<rfc category="std"
+    docName="draft-snijders-idr-shutdown-01"
+    updates="4486"
+    ipr="trust200902">
     <front>
         <title abbrev="BGP Shutdown">
-            The Shutdown Communication BGP Cease Notification Message subcode
+            BGP Administrative Shutdown with additional Communication
         </title>
 
         <author fullname="Job Snijders" initials="J." surname="Snijders">
@@ -44,19 +47,19 @@
             </address>
         </author>
 
-		<author fullname="John Scudder" initials="J.S." surname="Scudder">
-			<organization abbrev="Juniper">Juniper Networks</organization>
-			<address>
-				<postal>
-					<street>1194 N. Mathilda Ave</street>
-					<city>Sunnyvale</city>
-					<region>CA</region>
-					<code>94089</code>
-					<country>USA</country>
-				</postal>
-				<email>jgs@juniper.net</email>
-			</address>
-		</author>
+        <author fullname="John Scudder" initials="J.S." surname="Scudder">
+            <organization abbrev="Juniper">Juniper Networks</organization>
+            <address>
+                <postal>
+                    <street>1194 N. Mathilda Ave</street>
+                    <city>Sunnyvale</city>
+                    <region>CA</region>
+                    <code>94089</code>
+                    <country>USA</country>
+                </postal>
+                <email>jgs@juniper.net</email>
+            </address>
+        </author>
 
         <date />
 
@@ -68,8 +71,8 @@
 
         <abstract>
             <t>
-                This document defines the BGP Cease NOTIFICATION message
-                "Shutdown Communication" subcode for operators to transmit a
+                This document enhances the BGP Cease NOTIFICATION message
+                "Administrative Shutdown" subcode for operators to transmit a
                 short freeform message to describe why a BGP session was
                 shutdown.
             </t>
@@ -105,10 +108,9 @@
                 If a BGP speaker decides to terminate its session with a BGP
                 neighbor, then the BGP speaker MAY send to the neighbor a
                 NOTIFICATION message with the Error Code "Cease" and the Error
-                Subcode TBD "Shutdown Communication" followed by a freeform
-                UTF-8 encoded string with a REQUIRED maximum length of 128
-                octets. The contents of the string are at the operator's
-                discretion.
+                Subcode "Administrative Shutdown" followed by a freeform UTF-8
+                encoded string with a REQUIRED maximum length of 128 octets.
+                The contents of the string are at the operator's discretion.
             </t>
 <t>
 The Shutdown Communication Cease NOTIFICATION message is encoded as following:
@@ -116,7 +118,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-| Error code 6  |  subcode TBD  |              ...              |
+| Error code 6  |   subcode 2   |              ...              |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 |                   ... Shutdown Communication ...              | 
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -148,7 +150,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
                 the Shutdown Communication are implementation specific but
                 SHOULD include methods such as <xref target="RFC5424">SYSLOG</xref>.
             </t>
-	
+    
         </section>
 
         <section anchor="ops" title="Operational Considerations">
@@ -170,20 +172,17 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
             </t>
         </section>
 
-	<section anchor="error" title="Error Handling">
+        <section anchor="error" title="Error Handling">
             <t>
-		Any erroneous or malformed Shutdown Communication received SHOULD 
-		be logged for the attention of the operator and then MAY be 
-		discarded.
+                Any erroneous or malformed Shutdown Communication received
+                SHOULD be logged for the attention of the operator and then MAY
+                be discarded.
             </t>
-	</section>
+        </section>
 
         <section anchor="iana" title="IANA Considerations">
             <t>
-                Per this document, IANA is requested to assign a subcode named
-                "Shutdown Communication" in the "Cease NOTIFICATION message
-                subcodes" registry under the "Border Gateway Protocol (BGP)
-                Parameters" group.
+                This document has no IANA actions.
             </t>
         </section>
 
@@ -254,7 +253,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
         <section anchor="acknowledgements" title="Acknowledgements">
             <t>
                 The author would like to gratefully acknowledge Tom Scholl,
-                David Freedman, and Jared Mauch.
+                David Freedman, Jared Mauch, and Jeff Haas.
             </t>
         </section>
     </back>
