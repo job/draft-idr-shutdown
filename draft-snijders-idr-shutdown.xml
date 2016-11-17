@@ -259,7 +259,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
         <section anchor="acknowledgements" title="Acknowledgements">
             <t>
                 The author would like to gratefully acknowledge Tom Scholl,
-                David Freedman, Jared Mauch, and Jeff Haas.
+                David Freedman, Jared Mauch, Jeff Haas and Peter Hessler.
             </t>
         </section>
     </back>
