@@ -150,7 +150,10 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
                 the Shutdown Communication are implementation specific but
                 SHOULD include methods such as <xref target="RFC5424">SYSLOG</xref>.
             </t>
-    
+            <t>
+                XXX TBD: incorporate feedback from
+                https://mailarchive.ietf.org/arch/msg/idr/RJGTGqzH2lTHfJzISuptKvmi1kU
+            </t>
         </section>
 
         <section anchor="ops" title="Operational Considerations">
