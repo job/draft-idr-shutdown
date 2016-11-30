@@ -51,7 +51,7 @@
       <tr><td class="lineno" valign="top"></td><td class="left">                                                       November 30, 2016</td><td> </td><td class="right">                                                       November 30, 2016</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
       <tr><td><a name="diff0002" /></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock">   <span class="delete">The</span> Shutdown Communication <span class="delete">BGP Cease Notification Message subcode</span></td><td> </td><td class="rblock">       <span class="insert">BGP Administrative</span> Shutdown <span class="insert">with additional</span> Communication</td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock">   <span class="delete">The</span> Shutdown Communication <span class="delete">BGP Cease Notification Message subcode</span></td><td> </td><td class="rblock">       <span class="insert">BGP Administrative</span> Shutdown <span class="insert">with Additional</span> Communication</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"><span class="delete">                       draft-ietf-idr-shutdown-00</span></td><td> </td><td class="rblock">                       <span class="insert">draft-ietf-idr-shutdown-01</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">Abstract</td><td> </td><td class="right">Abstract</td><td class="lineno" valign="top"></td></tr>
@@ -88,12 +88,13 @@
       <tr><td class="lineno" valign="top"></td><td class="left">   contents of the string are at the operator's discretion.</td><td> </td><td class="right">   contents of the string are at the operator's discretion.</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   The Shutdown Communication Cease NOTIFICATION message is encoded as</td><td> </td><td class="right">   The Shutdown Communication Cease NOTIFICATION message is encoded as</td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="left">   following:</td><td> </td><td class="right">   following:</td><td class="lineno" valign="top"></td></tr>
+      <tr><td><a name="diff0005" /></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock">   <span class="delete">following</span>:</td><td> </td><td class="rblock">   <span class="insert">below</span>:</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">    0                   1                   2                   3</td><td> </td><td class="right">    0                   1                   2                   3</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</td><td> </td><td class="right">    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</td><td> </td><td class="right">   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</td><td class="lineno" valign="top"></td></tr>
-      <tr><td><a name="diff0005" /></td></tr>
+      <tr><td><a name="diff0006" /></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock">   | Error code 6  |  <span class="delete">subcode TBD  |              ...       </span>       |</td><td> </td><td class="rblock">   | Error code 6  |  <span class="insert"> subcode 2   |    Length     |     ...</span>       |</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</td><td> </td><td class="right">   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   |                   ... Shutdown Communication ...              |</td><td> </td><td class="right">   |                   ... Shutdown Communication ...              |</td><td class="lineno" valign="top"></td></tr>
@@ -101,9 +102,9 @@
       <tr><td class="lineno" valign="top"></td><td class="left">   |                              ...                              |</td><td> </td><td class="right">   |                              ...                              |</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</td><td> </td><td class="right">   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
-      <tr><td><a name="diff0006" /></td></tr>
+      <tr><td><a name="diff0007" /></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock">   <span class="insert">The Length value can range from 0 to 128 and indicates how many</span></td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   octets of UTF-8 for the Shutdown Communication follow.</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   octets of Shutdown Communication follow.</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock">                                                                         </td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   To support international characters, the Shutdown Communication field</td><td> </td><td class="right">   To support international characters, the Shutdown Communication field</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   MUST be encoded using UTF-8.</td><td> </td><td class="right">   MUST be encoded using UTF-8.</td><td class="lineno" valign="top"></td></tr>
@@ -111,11 +112,12 @@
       <tr><td class="lineno" valign="top"></td><td class="left">   The sending BGP speaker SHOULD avoid octet values below 32 (control</td><td> </td><td class="right">   The sending BGP speaker SHOULD avoid octet values below 32 (control</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   characters), however these values are legal.  Following UNICODE TR36</td><td> </td><td class="right">   characters), however these values are legal.  Following UNICODE TR36</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   [UTR36], Sec 3.1, the sending BGP speaker MUST encode messages in the</td><td> </td><td class="right">   [UTR36], Sec 3.1, the sending BGP speaker MUST encode messages in the</td><td class="lineno" valign="top"></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="left">   "shortest form" and MUST NOT interpret messages in the "non shortest</td><td> </td><td class="right">   "shortest form" and MUST NOT interpret messages in the "non shortest</td><td class="lineno" valign="top"></td></tr>
+      <tr><td><a name="diff0008" /></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock">   "shortest form" and MUST NOT interpret messages in the "non<span class="delete"> </span>shortest</td><td> </td><td class="rblock">   "shortest form" and MUST NOT interpret messages in the "non<span class="insert">-</span>shortest</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   form".  A receiving BGP speaker MUST NOT interpret invalid UTF-8</td><td> </td><td class="right">   form".  A receiving BGP speaker MUST NOT interpret invalid UTF-8</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   sequences.</td><td> </td><td class="right">   sequences.</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
-      <tr><td><a name="diff0007" /></td></tr>
+      <tr><td><a name="diff0009" /></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock">   <span class="delete">It is RECOMMENDED that a BGP speaker receiving a Shutdown</span></td><td> </td><td class="rblock"></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"><span class="delete">   Communication observe retry behaviour in line with the RFC4486</span></td><td> </td><td class="rblock"></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"><span class="delete">   [RFC4486] behaviour for "Administrative Shutdown" (sec 4.0).</span></td><td> </td><td class="rblock"></td><td class="lineno" valign="top"></td></tr>
@@ -142,7 +144,7 @@
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">5.  IANA Considerations</td><td> </td><td class="right">5.  IANA Considerations</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
-      <tr><td><a name="diff0008" /></td></tr>
+      <tr><td><a name="diff0010" /></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock">   Per this document, IANA is requested to <span class="delete">assign a</span> subcode <span class="delete">named</span></td><td> </td><td class="rblock">   Per this document, IANA is requested to <span class="insert">reference this document at</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock"><span class="delete">   "Shutdown Communication"</span> in the "Cease NOTIFICATION message subcodes"</td><td> </td><td class="rblock">   subcode <span class="insert">"Administrative Shutdown"</span> in the "Cease NOTIFICATION message</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="lblock">   registry under the "Border Gateway Protocol (BGP) Parameters" group.</td><td> </td><td class="rblock">   subcodes" registry under the "Border Gateway Protocol (BGP)</td><td class="lineno" valign="top"></td></tr>
@@ -169,8 +171,9 @@
       <tr><td class="lineno" valign="top"></td><td class="left">Appendix A.  Acknowledgements</td><td> </td><td class="right">Appendix A.  Acknowledgements</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">   The author would like to gratefully acknowledge Tom Scholl, David</td><td> </td><td class="right">   The author would like to gratefully acknowledge Tom Scholl, David</td><td class="lineno" valign="top"></td></tr>
-      <tr><td><a name="diff0009" /></td></tr>
-      <tr><td class="lineno" valign="top"></td><td class="lblock">   Freedman, <span class="delete">and Jared Mauch</span>.</td><td> </td><td class="rblock">   Freedman, <span class="insert">Jared Mauch, Jeff Haas, Peter Hessler, and Bruno Decraene</span>.</td><td class="lineno" valign="top"></td></tr>
+      <tr><td><a name="diff0011" /></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock">   Freedman, <span class="delete">and</span> Jared <span class="delete">Mauch.</span></td><td> </td><td class="rblock">   Freedman, Jared <span class="insert">Mauch, Jeff Haas, Peter Hessler, Bruno Decraene, and</span></td><td class="lineno" valign="top"></td></tr>
+      <tr><td class="lineno" valign="top"></td><td class="lblock"></td><td> </td><td class="rblock"><span class="insert">   John Heasley.</span></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left">Authors' Addresses</td><td> </td><td class="right">Authors' Addresses</td><td class="lineno" valign="top"></td></tr>
       <tr><td class="lineno" valign="top"></td><td class="left"></td><td> </td><td class="right"></td><td class="lineno" valign="top"></td></tr>
@@ -183,8 +186,8 @@
       <tr><td class="lineno" valign="top"></td><td class="left">   Email: job@ntt.net</td><td> </td><td class="right">   Email: job@ntt.net</td><td class="lineno" valign="top"></td></tr>
 
      <tr><td></td><td class="left"></td><td> </td><td class="right"></td><td></td></tr>
-     <tr bgcolor="gray"><th colspan="5" align="center"><a name="end">&nbsp;End of changes. 9 change blocks.&nbsp;</a></th></tr>
-     <tr class="stats"><td></td><th><i>18 lines changed or deleted</i></th><th><i> </i></th><th><i>18 lines changed or added</i></th><td></td></tr>
+     <tr bgcolor="gray"><th colspan="5" align="center"><a name="end">&nbsp;End of changes. 11 change blocks.&nbsp;</a></th></tr>
+     <tr class="stats"><td></td><th><i>20 lines changed or deleted</i></th><th><i> </i></th><th><i>21 lines changed or added</i></th><td></td></tr>
      <tr><td colspan="5" align="center" class="small"><br/>This html diff was produced by rfcdiff 1.41. The latest version is available from <a href="http://www.tools.ietf.org/tools/rfcdiff/" >http://tools.ietf.org/tools/rfcdiff/</a> </td></tr>
    </table>
    </body>

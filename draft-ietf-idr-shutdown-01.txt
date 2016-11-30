@@ -11,7 +11,7 @@ Expires: June 3, 2017                                         J. Scudder
                                                        November 30, 2016
 
 
-       BGP Administrative Shutdown with additional Communication
+       BGP Administrative Shutdown with Additional Communication
                        draft-ietf-idr-shutdown-01
 
 Abstract
@@ -100,7 +100,7 @@ Table of Contents
    contents of the string are at the operator's discretion.
 
    The Shutdown Communication Cease NOTIFICATION message is encoded as
-   following:
+   below:
 
 
 
@@ -125,7 +125,7 @@ Internet-Draft                BGP Shutdown                 November 2016
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
    The Length value can range from 0 to 128 and indicates how many
-   octets of UTF-8 for the Shutdown Communication follow.
+   octets of Shutdown Communication follow.
 
    To support international characters, the Shutdown Communication field
    MUST be encoded using UTF-8.
@@ -133,7 +133,7 @@ Internet-Draft                BGP Shutdown                 November 2016
    The sending BGP speaker SHOULD avoid octet values below 32 (control
    characters), however these values are legal.  Following UNICODE TR36
    [UTR36], Sec 3.1, the sending BGP speaker MUST encode messages in the
-   "shortest form" and MUST NOT interpret messages in the "non shortest
+   "shortest form" and MUST NOT interpret messages in the "non-shortest
    form".  A receiving BGP speaker MUST NOT interpret invalid UTF-8
    sequences.
 
@@ -257,7 +257,8 @@ Internet-Draft                BGP Shutdown                 November 2016
 Appendix A.  Acknowledgements
 
    The author would like to gratefully acknowledge Tom Scholl, David
-   Freedman, Jared Mauch, Jeff Haas, Peter Hessler, and Bruno Decraene.
+   Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno Decraene, and
+   John Heasley.
 
 Authors' Addresses
 
@@ -268,7 +269,6 @@ Authors' Addresses
    NL
 
    Email: job@ntt.net
-
 
 
 
