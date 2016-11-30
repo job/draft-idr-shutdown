@@ -17,7 +17,7 @@
     ipr="trust200902">
     <front>
         <title abbrev="BGP Shutdown">
-            BGP Administrative Shutdown with additional Communication
+            BGP Administrative Shutdown with Additional Communication
         </title>
 
         <author fullname="Job Snijders" initials="J." surname="Snijders">
@@ -113,7 +113,7 @@
                 The contents of the string are at the operator's discretion.
             </t>
 <t>
-The Shutdown Communication Cease NOTIFICATION message is encoded as following:
+The Shutdown Communication Cease NOTIFICATION message is encoded as below:
 <figure align="center"><artwork><![CDATA[
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
@@ -128,7 +128,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
 </t>
             <t>
                 The Length value can range from 0 to 128 and indicates how many
-                octets of UTF-8 for the Shutdown Communication follow.
+                octets of Shutdown Communication follow.
             </t>
             <t>
                 To support international characters, the Shutdown Communication
@@ -139,7 +139,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
                 (control characters), however these values are legal.
                 Following <xref target="UTR36">UNICODE TR36</xref>, Sec 3.1,
                 the sending BGP speaker MUST encode messages in the "shortest
-                form" and MUST NOT interpret messages in the "non shortest
+                form" and MUST NOT interpret messages in the "non-shortest
                 form".  A receiving BGP speaker MUST NOT interpret invalid
                 UTF-8 sequences.
             </t>
@@ -259,8 +259,8 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
         <section anchor="acknowledgements" title="Acknowledgements">
             <t>
                 The author would like to gratefully acknowledge Tom Scholl,
-                David Freedman, Jared Mauch, Jeff Haas, Peter Hessler, and
-                Bruno Decraene.
+                David Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno
+                Decraene, and John Heasley.
             </t>
         </section>
     </back>
