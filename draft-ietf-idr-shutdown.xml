@@ -206,6 +206,20 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
                 expected and needed, and by limiting the length of the Shutdown
                 Communication.
             </t>
+            <t>
+                Users of this mechanism should be aware that unless a
+                transport that provides integrity (such as <xref
+                target="RFC5925">TCP-AO</xref>) is used for the BGP
+                session in question, a Shutdown Communication message
+                could be forged. Unless a transport that provides
+                confidentiality (such as <xref
+                target="RFC4303">IPSec</xref>) is used, a Shutdown
+                Communication message could be snooped by an attacker.
+                These issues are common to any BGP message but may be of
+                greater interest in the context of this proposal since
+                the information carried in the message is generally
+                expected to be used for human-to-human communication.
+            </t>                
         </section>
 
   <section title="Implementation status - RFC EDITOR: REMOVE BEFORE PUBLICATION">
@@ -243,7 +257,9 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
             <?rfc include="reference.RFC.4486"?>
         </references>
         <references title="Informative References">
+            <?rfc include="reference.RFC.4303"?>
             <?rfc include="reference.RFC.5424"?>
+            <?rfc include="reference.RFC.5925"?>
             <?rfc include="reference.RFC.7942"?>
             <reference anchor="UTR36" target="http://unicode.org/reports/tr36/">
                 <front>
