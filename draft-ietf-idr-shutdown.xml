@@ -196,7 +196,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
             <t>
                 This document uses UTF-8 encoding for the Shutdown
                 Communication. There are a number of security issues with
-                UNICODE. Any implementer and operator is advised to review
+                UNICODE. Any implementer and operator are advised to review
                 <xref target="UTR36">UNICODE TR36</xref> to learn about these
                 issues. This document guards against the technical issues
                 outlined in UTR36 by REQUIRING "shortest form" encoding.
