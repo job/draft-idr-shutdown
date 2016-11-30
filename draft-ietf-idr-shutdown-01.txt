@@ -180,14 +180,14 @@ Internet-Draft                BGP Shutdown                 November 2016
 6.  Security Considerations
 
    This document uses UTF-8 encoding for the Shutdown Communication.
-   There are a number of security issues with UNICODE.  Any implementer
-   and operator are advised to review UNICODE TR36 [UTR36] to learn
-   about these issues.  This document guards against the technical
-   issues outlined in UTR36 by REQUIRING "shortest form" encoding.
-   However, the visual spoofing due to character confusion still
-   persists.  This document tries to minimize the effects of visual
-   spoofing by allowing UNICODE only where local script is expected and
-   needed, and by limiting the length of the Shutdown Communication.
+   There are a number of security issues with UNICODE.  Implementers and
+   operator are advised to review UNICODE TR36 [UTR36] to learn about
+   these issues.  This document guards against the technical issues
+   outlined in UTR36 by REQUIRING "shortest form" encoding.  However,
+   the visual spoofing due to character confusion still persists.  This
+   document tries to minimize the effects of visual spoofing by allowing
+   UNICODE only where local script is expected and needed, and by
+   limiting the length of the Shutdown Communication.
 
 7.  Implementation status - RFC EDITOR: REMOVE BEFORE PUBLICATION
 
@@ -256,7 +256,7 @@ Internet-Draft                BGP Shutdown                 November 2016
 
 Appendix A.  Acknowledgements
 
-   The author would like to gratefully acknowledge Tom Scholl, David
+   The authors would like to gratefully acknowledge Tom Scholl, David
    Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno Decraene, and
    John Heasley.
 
