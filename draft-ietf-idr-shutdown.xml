@@ -12,7 +12,7 @@
 <?rfc tocompact="yes"?>
 
 <rfc category="std"
-    docName="draft-snijders-idr-shutdown-01"
+    docName="draft-ietf-idr-shutdown-01"
     updates="4486"
     ipr="trust200902">
     <front>
@@ -118,7 +118,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-| Error code 6  |   subcode 2   |              ...              |
+| Error code 6  |   subcode 2   |    Length     |     ...       |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 |                   ... Shutdown Communication ...              | 
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -126,6 +126,10 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ]]></artwork></figure>
 </t>
+            <t>
+                The Length value can range from 0 to 128 and indicates how many
+                octets of UTF-8 for the Shutdown Communication follow.
+            </t>
             <t>
                 To support international characters, the Shutdown Communication
                 field MUST be encoded using UTF-8.
@@ -140,20 +144,16 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
                 UTF-8 sequences.
             </t>
             <t>
-                It is RECOMMENDED that a BGP speaker receiving a Shutdown
-                Communication observe retry behaviour in line with the
-                <xref target="RFC4486">RFC4486</xref> behaviour for
-                "Administrative Shutdown" (sec 4.0).
-            </t>
-            <t>
                 Mechanisms concerning the reporting of information contained in
                 the Shutdown Communication are implementation specific but
                 SHOULD include methods such as <xref target="RFC5424">SYSLOG</xref>.
             </t>
+<!--
             <t>
                 XXX TBD: incorporate feedback from
                 https://mailarchive.ietf.org/arch/msg/idr/RJGTGqzH2lTHfJzISuptKvmi1kU
             </t>
+-->
         </section>
 
         <section anchor="ops" title="Operational Considerations">
@@ -259,7 +259,8 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as following:
         <section anchor="acknowledgements" title="Acknowledgements">
             <t>
                 The author would like to gratefully acknowledge Tom Scholl,
-                David Freedman, Jared Mauch, Jeff Haas and Peter Hessler.
+                David Freedman, Jared Mauch, Jeff Haas, Peter Hessler, and
+                Bruno Decraene.
             </t>
         </section>
     </back>
