@@ -159,18 +159,18 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
         <section anchor="ops" title="Operational Considerations">
             <t>
                 Operators are encouraged to use the Shutdown Communication to
-                inform their peers with a reference and reason as to why the
-                BGP session is shut down. An example of a useful Shutdown
-                Communication would be:
+                inform their peers of the reason for the shutdown of the BGP
+                session and include out-of-band reference materials.  An
+                example of a useful Shutdown Communication would be:
             </t>
-            <t>"[VNOC-1-1438367390] software upgrade, back in 2 hours"</t>
+            <t>"[TICKET-1-1438367390] software upgrade, back in 2 hours"</t>
             <t>
-                "[VNOC-1-1438367390]" is a ticket reference with significance
+                "[TICKET-1-1438367390]" is a ticket reference with significance
                 to both the sender and receiver, followed by a brief human
-                readable message regarding the work triggering the BGP session
+                readable message regarding the reason for the BGP session
                 shutdown followed by an indication about the length of the
                 maintenance. The receiver can now use the string
-                'VNOC-1-1438367390' to search in their email archive to find
+                'TICKET-1-1438367390' to search in their email archive to find
                 more details.
             </t>
         </section>
