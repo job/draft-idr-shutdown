@@ -242,6 +242,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
            Shutdown Communication:
            <list style="symbols">
                <t>ExaBGP</t>
+               <t>pmacct</t>
            </list>
        </t>
    </section>
