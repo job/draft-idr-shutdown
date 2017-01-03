@@ -17,7 +17,7 @@
     ipr="trust200902">
     <front>
         <title abbrev="BGP Shutdown">
-            BGP Administrative Shutdown with Additional Communication
+            BGP Administrative Shutdown Communication
         </title>
 
         <author fullname="Job Snijders" initials="J." surname="Snijders">
@@ -245,7 +245,8 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
                <t>pmacct</t>
                <t>BIRD</t>
                <t>OpenBGPD</t>
-               <t>Wireshark</t>
+               <t>Wireshark (packet analyser)</t>
+               <t>tcpdump (packet analyser)</t>
            </list>
        </t>
    </section>
