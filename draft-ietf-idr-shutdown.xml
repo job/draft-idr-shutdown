@@ -227,7 +227,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
            This section records the status of known implementations of the
            protocol defined by this specification at the time of posting of
            this Internet-Draft, and is based on a proposal described in
-           <xref target="RFC7942" />. The description of implementations in this
+           RFC7942. The description of implementations in this
            section is intended to assist the IETF in its decision processes in
            progressing drafts to RFCs.  Please note that the listing of any
            individual implementation here does not imply endorsement by the
@@ -265,7 +265,6 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
             <?rfc include="reference.RFC.4303"?>
             <?rfc include="reference.RFC.5424"?>
             <?rfc include="reference.RFC.5925"?>
-            <?rfc include="reference.RFC.7942"?>
             <reference anchor="UTR36" target="http://unicode.org/reports/tr36/">
                 <front>
                     <title>Unicode Security Considerations</title>
@@ -281,7 +280,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
             <t>
                 The authors would like to gratefully acknowledge Tom Scholl,
                 David Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno
-                Decraene, and John Heasley.
+                Decraene, John Heasley, Peter van Dijk, and Arjen Zonneveld.
             </t>
         </section>
     </back>
