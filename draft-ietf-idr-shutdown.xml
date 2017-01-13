@@ -243,7 +243,6 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
            <list style="symbols">
                <t>ExaBGP</t>
                <t>pmacct</t>
-               <t>BIRD</t>
                <t>OpenBGPD</t>
                <t>Wireshark (packet analyser)</t>
                <t>tcpdump (packet analyser)</t>
