@@ -132,16 +132,8 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
             </t>
             <t>
                 To support international characters, the Shutdown Communication
-                field MUST be encoded using UTF-8.
-            </t>
-            <t>
-                The sending BGP speaker SHOULD avoid octet values below 32
-                (control characters), however these values are legal.
-                Following <xref target="UTR36">UNICODE TR36</xref>, Sec 3.1,
-                the sending BGP speaker MUST encode messages in the "shortest
-                form" and MUST NOT interpret messages in the "non-shortest
-                form".  A receiving BGP speaker MUST NOT interpret invalid
-                UTF-8 sequences.
+                field MUST be encoded using UTF-8. A receiving BGP speaker MUST
+                NOT interpret invalid UTF-8 sequences.
             </t>
             <t>
                 Mechanisms concerning the reporting of information contained in
@@ -201,9 +193,8 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
                 issues. This document guards against the technical issues
                 outlined in UTR36 by REQUIRING "shortest form" encoding.
                 However, the visual spoofing due to character confusion still
-                persists. This document tries to minimize the effects of visual
-                spoofing by allowing UNICODE only where local script is
-                expected and needed, and by limiting the length of the Shutdown
+                persists. This specification minimizes the effects of visual
+                spoofing by limiting the length of the Shutdown
                 Communication.
             </t>
             <t>
@@ -241,11 +232,11 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
            As of today these vendors have produced an implementation of the
            Shutdown Communication:
            <list style="symbols">
-               <t>ExaBGP</t>
-               <t>pmacct</t>
-               <t>OpenBGPD</t>
-               <t>Wireshark (packet analyser)</t>
-               <t>tcpdump (packet analyser)</t>
+               <t><eref target="https://github.com/Exa-Networks/exabgp/blob/d8b7cd24e835b9dabfddc87d74e0161921165a50/lib/exabgp/bgp/message/notification.py#L112-L144">ExaBGP</eref></t>
+               <t><eref target="https://github.com/pmacct/pmacct/compare/ed8df5820c9f0b8847a7b0873ade3af8ab262113...9fd97a77d144b15bf42d4e55a4d861c499bb0cfc">pmacct</eref></t>
+               <t><eref target="https://github.com/openbsd/src/commit/0561b344da393d4a962339c507c2e78057100ae1">OpenBGPD</eref></t>
+               <t><eref target="https://www.wireshark.org/lists/wireshark-commits/201612/msg00238.html">Wireshark</eref> (packet analyser)</t>
+               <t><eref target="https://github.com/the-tcpdump-group/tcpdump/pull/578">tcpdump</eref>, <eref target="http://marc.info/?l=openbsd-tech&amp;m=148379081203084&amp;w=2">(alt)</eref> (packet analyser)</t>
            </list>
        </t>
    </section>
