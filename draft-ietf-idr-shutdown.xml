@@ -180,7 +180,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
                 Per this document, IANA is requested to reference this document
                 at subcode "Administrative Shutdown" in the "Cease NOTIFICATION
                 message subcodes" registry under the "Border Gateway Protocol
-                (BGP) Parameters" group.
+                (BGP) Parameters" group in addition to <xref target="RFC4486" />.
             </t>
         </section>
 
