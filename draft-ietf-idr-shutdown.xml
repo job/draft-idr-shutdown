@@ -12,7 +12,7 @@
 <?rfc tocompact="yes"?>
 
 <rfc category="std"
-    docName="draft-ietf-idr-shutdown-02"
+    docName="draft-ietf-idr-shutdown-03"
     updates="4486"
     ipr="trust200902">
     <front>
@@ -235,6 +235,7 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
                <t><eref target="https://github.com/Exa-Networks/exabgp/blob/d8b7cd24e835b9dabfddc87d74e0161921165a50/lib/exabgp/bgp/message/notification.py#L112-L144">ExaBGP</eref></t>
                <t><eref target="https://github.com/pmacct/pmacct/compare/ed8df5820c9f0b8847a7b0873ade3af8ab262113...9fd97a77d144b15bf42d4e55a4d861c499bb0cfc">pmacct</eref></t>
                <t><eref target="https://github.com/openbsd/src/commit/0561b344da393d4a962339c507c2e78057100ae1">OpenBGPD</eref></t>
+               <t>GoBGP</t>
                <t><eref target="https://www.wireshark.org/lists/wireshark-commits/201612/msg00238.html">Wireshark</eref> (packet analyser)</t>
                <t><eref target="https://github.com/the-tcpdump-group/tcpdump/pull/578">tcpdump</eref>, <eref target="http://marc.info/?l=openbsd-tech&amp;m=148379081203084&amp;w=2">(alt)</eref> (packet analyser)</t>
            </list>
