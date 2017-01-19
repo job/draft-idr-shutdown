@@ -108,9 +108,9 @@
                 If a BGP speaker decides to terminate its session with a BGP
                 neighbor, then the BGP speaker MAY send to the neighbor a
                 NOTIFICATION message with the Error Code "Cease" and the Error
-                Subcode "Administrative Shutdown" followed by a freeform UTF-8
-                encoded string with a REQUIRED maximum length of 128 octets.
-                The contents of the string are at the operator's discretion.
+                Subcode "Administrative Shutdown" followed by a length field
+                and a freeform UTF-8 encoded string. The contents of the string
+                are at the operator's discretion.
             </t>
 <t>
 The Shutdown Communication Cease NOTIFICATION message is encoded as below:
@@ -118,34 +118,37 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-| Error code 6  |   subcode 2   |    Length     |     ...       |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                   ... Shutdown Communication ...              | 
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                              ...                              |  
+| Error code 6  |   subcode 2   |    Length     |     ...       \
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+               /
+\                                                               \
+/                 ... Shutdown Communication ...                /
+\                                                               \
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ]]></artwork></figure>
 </t>
             <t>
-                The Length value can range from 0 to 128 and indicates how many
-                octets of Shutdown Communication follow.
-            </t>
-            <t>
-                To support international characters, the Shutdown Communication
-                field MUST be encoded using UTF-8. A receiving BGP speaker MUST
-                NOT interpret invalid UTF-8 sequences.
+                <list style="hanging">
+                    <t hangText="Length:">
+                        The 8-bit length field represents the length of the
+                        Shutdown Communication field in octets. The length
+                        value MUST range from 0 to 128 inclusive. Note that
+                        when the Shutdown Communication contains multibyte
+                        characters, the number of characters will be less than
+                        the length value.
+                    </t>
+                    <t hangText="Shutdown Communication:">
+                        to support international characters, the Shutdown
+                        Communication field MUST be encoded using UTF-8. A
+                        receiving BGP speaker MUST NOT interpret invalid UTF-8
+                        sequences.
+                    </t>
+                </list>
             </t>
             <t>
                 Mechanisms concerning the reporting of information contained in
                 the Shutdown Communication are implementation specific but
                 SHOULD include methods such as <xref target="RFC5424">SYSLOG</xref>.
             </t>
-<!--
-            <t>
-                XXX TBD: incorporate feedback from
-                https://mailarchive.ietf.org/arch/msg/idr/RJGTGqzH2lTHfJzISuptKvmi1kU
-            </t>
--->
         </section>
 
         <section anchor="ops" title="Operational Considerations">
@@ -271,7 +274,8 @@ The Shutdown Communication Cease NOTIFICATION message is encoded as below:
             <t>
                 The authors would like to gratefully acknowledge Tom Scholl,
                 David Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno
-                Decraene, John Heasley, Peter van Dijk, and Arjen Zonneveld.
+                Decraene, John Heasley, Peter van Dijk, Arjen Zonneveld, James
+                Bensley, and Susan Hares.
             </t>
         </section>
     </back>
