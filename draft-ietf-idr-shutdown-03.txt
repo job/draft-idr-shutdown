@@ -124,14 +124,16 @@ Internet-Draft                BGP Shutdown                  January 2017
    \                                                               \
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-   Length:  The 8-bit length field represents the length of the Shutdown
+   Length:  this 8-bit field represents the length of the Shutdown
       Communication field in octets.  The length value MUST range from 0
-      to 128 inclusive.  Note that when the Shutdown Communication
-      contains multibyte characters, the number of characters will be
-      less than the length value.
+      to 128 inclusive.  When the length value is zero, no Shutdown
+      Communication field follows.
    Shutdown Communication:  to support international characters, the
       Shutdown Communication field MUST be encoded using UTF-8.  A
       receiving BGP speaker MUST NOT interpret invalid UTF-8 sequences.
+      Note that when the Shutdown Communication contains multibyte
+      characters, the number of characters will be less than the length
+      value.
 
    Mechanisms concerning the reporting of information contained in the
    Shutdown Communication are implementation specific but SHOULD include
@@ -157,8 +159,6 @@ Internet-Draft                BGP Shutdown                  January 2017
 
    Any erroneous or malformed Shutdown Communication received SHOULD be
    logged for the attention of the operator and then MAY be discarded.
-
-
 
 
 
