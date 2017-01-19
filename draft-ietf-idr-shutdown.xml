@@ -130,18 +130,18 @@ encoded as below:
             <t>
                 <list style="hanging">
                     <t hangText="Length:">
-                        The 8-bit length field represents the length of the
-                        Shutdown Communication field in octets. The length
-                        value MUST range from 0 to 128 inclusive. Note that
-                        when the Shutdown Communication contains multibyte
-                        characters, the number of characters will be less than
-                        the length value.
+                        this 8-bit field represents the length of the Shutdown
+                        Communication field in octets. The length value MUST
+                        range from 0 to 128 inclusive. When the length value is
+                        zero, no Shutdown Communication field follows.
                     </t>
                     <t hangText="Shutdown Communication:">
                         to support international characters, the Shutdown
                         Communication field MUST be encoded using UTF-8. A
                         receiving BGP speaker MUST NOT interpret invalid UTF-8
-                        sequences.
+                        sequences. Note that when the Shutdown Communication
+                        contains multibyte characters, the number of characters
+                        will be less than the length value.
                     </t>
                 </list>
             </t>
