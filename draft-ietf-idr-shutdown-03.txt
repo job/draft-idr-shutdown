@@ -100,8 +100,8 @@ Table of Contents
    freeform UTF-8 encoded string.  The contents of the string are at the
    operator's discretion.
 
-   The Shutdown Communication Cease NOTIFICATION message is encoded as
-   below:
+   The Cease NOTIFICATION message with an Administrative Shutdown
+   Communication is encoded as below:
 
 
 
