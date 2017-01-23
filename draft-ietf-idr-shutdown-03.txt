@@ -96,8 +96,8 @@ Table of Contents
    If a BGP speaker decides to terminate its session with a BGP
    neighbor, then the BGP speaker MAY send to the neighbor a
    NOTIFICATION message with the Error Code "Cease" and the Error
-   Subcode "Administrative Shutdown" followed by a length field and a
-   freeform UTF-8 encoded string.  The contents of the string are at the
+   Subcode "Administrative Shutdown" followed by a length field and an
+   UTF-8 encoded string.  The contents of the string are at the
    operator's discretion.
 
    The Cease NOTIFICATION message with an Administrative Shutdown
@@ -305,8 +305,8 @@ Appendix A.  Acknowledgements
 
    The authors would like to gratefully acknowledge Tom Scholl, David
    Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno Decraene, John
-   Heasley, Peter van Dijk, Arjen Zonneveld, James Bensley, and Susan
-   Hares.
+   Heasley, Peter van Dijk, Arjen Zonneveld, James Bensley, Susan Hares,
+   and Saku Ytti.
 
 Authors' Addresses
 
