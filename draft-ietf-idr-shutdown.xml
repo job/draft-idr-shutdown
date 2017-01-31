@@ -12,7 +12,7 @@
 <?rfc tocompact="yes"?>
 
 <rfc category="std"
-    docName="draft-ietf-idr-shutdown-04"
+    docName="draft-ietf-idr-shutdown-05"
     updates="4486"
     ipr="trust200902">
     <front>
@@ -247,12 +247,9 @@ below:
                 <t>ExaBGP</t>
                 <t>pmacct</t>
                 <t>OpenBGPD</t>
+                <t>GoBGP</eref></t>
                 <t>tcpdump (packet analyser)</t>
-<!--
-               <t><eref target="https://github.com/osrg/gobgp/pull/1218">GoBGP</eref></t>
-               <t><eref target="https://www.wireshark.org/lists/wireshark-commits/201612/msg00238.html">Wireshark</eref> (packet analyser)</t>
-               <t><eref target="https://github.com/the-tcpdump-group/tcpdump/pull/578">tcpdump</eref>, <eref target="http://marc.info/?l=openbsd-tech&amp;m=148379081203084&amp;w=2">(alt)</eref> (packet analyser)</t>
--->
+                <t>Wireshark (packet analyser)</t>
            </list>
        </t>
    </section>
