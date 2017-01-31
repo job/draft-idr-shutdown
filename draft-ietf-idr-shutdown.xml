@@ -247,7 +247,7 @@ below:
                 <t>ExaBGP</t>
                 <t>pmacct</t>
                 <t>OpenBGPD</t>
-                <t>GoBGP</eref></t>
+                <t>GoBGP</t>
                 <t>tcpdump (packet analyser)</t>
                 <t>Wireshark (packet analyser)</t>
            </list>
