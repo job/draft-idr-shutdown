@@ -10,11 +10,12 @@
 <?rfc tocdepth="3"?>
 <?rfc tocindent="yes"?>
 <?rfc tocompact="yes"?>
+<?rfc strict="yes"?>
 
 <rfc category="std"
-    docName="draft-ietf-idr-shutdown-05"
+    docName="draft-ietf-idr-shutdown-06"
     updates="4486"
-    ipr="trust200902">
+    ipr="pre5378Trust200902">
     <front>
         <title abbrev="BGP Shutdown">
             BGP Administrative Shutdown Communication
@@ -74,7 +75,8 @@
                 This document enhances the BGP Cease NOTIFICATION message
                 "Administrative Shutdown" and "Administrative Reset" subcodes
                 for operators to transmit a short freeform message to describe
-                why a BGP session was shutdown or reset.
+                why a BGP session was shutdown or reset. This document updates
+                RFC 4486.
             </t>
         </abstract>
 
@@ -148,7 +150,8 @@ below:
                         receiving BGP speaker MUST NOT interpret invalid UTF-8
                         sequences. Note that when the Shutdown Communication
                         contains multibyte characters, the number of characters
-                        will be less than the length value.
+                        will be less than the length value. This field is not
+                        NUL terminated.
                     </t>
                 </list>
             </t>
@@ -284,7 +287,7 @@ below:
                 The authors would like to gratefully acknowledge Tom Scholl,
                 David Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno
                 Decraene, John Heasley, Peter van Dijk, Arjen Zonneveld, James
-                Bensley, Susan Hares, and Saku Ytti.
+                Bensley, Susan Hares, Saku Ytti, and Lou Berger.
             </t>
         </section>
     </back>
