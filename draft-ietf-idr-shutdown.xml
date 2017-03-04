@@ -251,6 +251,7 @@ below:
                 <t>pmacct</t>
                 <t>OpenBGPD</t>
                 <t>GoBGP</t>
+                <t>FreeRangeRouting (frr)</t>
                 <t>tcpdump (packet analyser)</t>
                 <t>Wireshark (packet analyser)</t>
            </list>
