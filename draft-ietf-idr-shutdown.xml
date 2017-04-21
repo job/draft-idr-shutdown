@@ -13,7 +13,7 @@
 <?rfc strict="yes"?>
 
 <rfc category="std"
-    docName="draft-ietf-idr-shutdown-07"
+    docName="draft-ietf-idr-shutdown-08"
     updates="4486"
     ipr="pre5378Trust200902">
     <front>
@@ -94,30 +94,20 @@
     <middle>
         <section anchor="intro" title="Introduction">
             <t>
-                It can be troublesome for an operator to correlate a
-                <xref target="RFC4271">BGP-4</xref>
-                session teardown in the network with a notice that was
-                transmitted via off-line methods such email or telephone calls.
-                This document specifies a mechanism to transmit a short
-                freeform <xref target="RFC3629">UTF-8</xref> message as part of
-                a <xref target="RFC4486">Cease NOTIFICATION message</xref> to
-                inform the peer why the BGP session is being shutdown or reset.
+                It can be troublesome for an operator to correlate a <xref target="RFC4271">BGP-4</xref> session teardown in the network with a notice that was transmitted via off-line methods such email or telephone calls.
+                This document updates <xref target="RFC4486" /> by specifying a mechanism to transmit a short freeform <xref target="RFC3629">UTF-8</xref> message as part of a <xref target="RFC4271">Cease NOTIFICATION message</xref> to inform the peer why the BGP session is being shutdown or reset.
             </t>
         </section>
 
         <section anchor="message" title="Shutdown Communication">
             <t>
-                If a BGP speaker decides to terminate its session with a BGP
-                neighbor, then the BGP speaker MAY send to the neighbor a
-                NOTIFICATION message with the Error Code "Cease" and Error
-                Subcode "Administrative Shutdown" or "Administrative Reset"
-                followed by a length field and an UTF-8 encoded string. The
-                contents of the string are at the operator's discretion.
+                If a BGP speaker decides to terminate its session with a BGP neighbor, and it sends a NOTIFIATION message with the Error Code "Cease" and Error Subcode "Administrative Shutdown" or "Administrative Reset" <xref target="RFC4486" />, it MAY include an UTF-8 encoded string.
+                The contents of the string are at the operator's discretion.
             </t>
 <t>
 The Cease NOTIFICATION message with a Shutdown Communication is encoded as
 below:
-<figure align="center"><artwork><![CDATA[
+<figure anchor="encoding" align="center"><artwork><![CDATA[
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -183,9 +173,8 @@ below:
 
         <section anchor="error" title="Error Handling">
             <t>
-                Any erroneous or malformed Shutdown Communication received
-                SHOULD be logged for the attention of the operator and then MAY
-                be discarded.
+                If an erroneous or malformed Shutdown Communication is received, a message indicating this event SHOULD be logged for the attention of the operator.
+                An erroneous or malformed Shutdown Communication itself MAY be logged in a hexdump format.
             </t>
         </section>
 
@@ -201,30 +190,18 @@ below:
 
         <section anchor="security" title="Security Considerations">
             <t>
-                This document uses UTF-8 encoding for the Shutdown
-                Communication. There are a number of security issues with
-                UNICODE. Implementers and operator are advised to review
-                <xref target="UTR36">UNICODE TR36</xref> to learn about these
-                issues. This document guards against the technical issues
-                outlined in UTR36 by REQUIRING "shortest form" encoding.
-                However, the visual spoofing due to character confusion still
-                persists. This specification minimizes the effects of visual
-                spoofing by limiting the length of the Shutdown
-                Communication.
+                This document uses UTF-8 encoding for the Shutdown Communication.
+                There are a number of security issues with UNICODE.
+                Implementers and operator are advised to review <xref target="UTR36">UNICODE TR36</xref> to learn about these issues.
+                UTF-8 "Shortest Form" encoding is REQUIRED to guard against the technical issues outlined in UTR36.
+                However, the visual spoofing due to character confusion still persists.
+                This specification minimizes the effects of visual spoofing by limiting the length of the Shutdown Communication.
             </t>
             <t>
-                Users of this mechanism should be aware that unless a
-                transport that provides integrity (such as <xref
-                target="RFC5925">TCP-AO</xref>) is used for the BGP
-                session in question, a Shutdown Communication message
-                could be forged. Unless a transport that provides
-                confidentiality (such as <xref
-                target="RFC4303">IPSec</xref>) is used, a Shutdown
-                Communication message could be snooped by an attacker.
-                These issues are common to any BGP message but may be of
-                greater interest in the context of this proposal since
-                the information carried in the message is generally
-                expected to be used for human-to-human communication.
+                Users of this mechanism should be aware that unless a transport that provides integrity is used for the BGP session in question, a Shutdown Communication message could be forged.
+                Unless a transport that provides confidentiality is used, a Shutdown Communication message could be snooped by an attacker.
+                These issues are common to any BGP message but may be of greater interest in the context of this proposal since the information carried in the message is generally expected to be used for human-to-human communication.
+                Refer to the related considerations in <xref target="RFC4271" /> and <xref target="RFC4272" />.
             </t>                
         </section>
 
@@ -269,9 +246,8 @@ below:
             <?rfc include="reference.RFC.4486"?>
         </references>
         <references title="Informative References">
-            <?rfc include="reference.RFC.4303"?>
+            <?rfc include="reference.RFC.4272"?>
             <?rfc include="reference.RFC.5424"?>
-            <?rfc include="reference.RFC.5925"?>
             <reference anchor="UTR36" target="http://unicode.org/reports/tr36/">
                 <front>
                     <title>Unicode Security Considerations</title>
@@ -285,10 +261,7 @@ below:
 
         <section anchor="acknowledgements" title="Acknowledgements">
             <t>
-                The authors would like to gratefully acknowledge Tom Scholl,
-                David Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno
-                Decraene, John Heasley, Peter van Dijk, Arjen Zonneveld, James
-                Bensley, Susan Hares, Saku Ytti, and Lou Berger.
+                The authors would like to gratefully acknowledge Tom Scholl, David Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno Decraene, John Heasley, Peter van Dijk, Arjen Zonneveld, James Bensley, Susan Hares, Saku Ytti, Lou Berger, and Alvaro Retana.
             </t>
         </section>
     </back>
