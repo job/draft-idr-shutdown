@@ -173,7 +173,7 @@ below:
 
         <section anchor="error" title="Error Handling">
             <t>
-                If an erroneous or malformed Shutdown Communication is received, a message indicating this event SHOULD be logged for the attention of the operator.
+                If a Shutdown Communication with an invalid Length value, or an invalid UTF-8 sequence is received, a message indicating this event SHOULD be logged for the attention of the operator.
                 An erroneous or malformed Shutdown Communication itself MAY be logged in a hexdump format.
             </t>
         </section>
