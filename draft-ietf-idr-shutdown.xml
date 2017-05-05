@@ -101,7 +101,7 @@
 
         <section anchor="message" title="Shutdown Communication">
             <t>
-                If a BGP speaker decides to terminate its session with a BGP neighbor, and it sends a NOTIFIATION message with the Error Code "Cease" and Error Subcode "Administrative Shutdown" or "Administrative Reset" <xref target="RFC4486" />, it MAY include an UTF-8 encoded string.
+                If a BGP speaker decides to terminate its session with a BGP neighbor, and it sends a NOTIFICATION message with the Error Code "Cease" and Error Subcode "Administrative Shutdown" or "Administrative Reset" <xref target="RFC4486" />, it MAY include an UTF-8 encoded string.
                 The contents of the string are at the operator's discretion.
             </t>
 <t>
