@@ -202,7 +202,10 @@ below:
                 Unless a transport that provides confidentiality is used, a Shutdown Communication message could be snooped by an attacker.
                 These issues are common to any BGP message but may be of greater interest in the context of this proposal since the information carried in the message is generally expected to be used for human-to-human communication.
                 Refer to the related considerations in <xref target="RFC4271" /> and <xref target="RFC4272" />.
-            </t>                
+            </t> 
+            <t>
+                Users of this mechanism should consider applying data minimization practises as outlined in <xref target="RFC6973">Section 6.1</xref> as a received Shutdown Communication may be used at the receiver's discretion.
+            </t>
         </section>
 
   <section title="Implementation status - RFC EDITOR: REMOVE BEFORE PUBLICATION">
@@ -248,6 +251,7 @@ below:
         <references title="Informative References">
             <?rfc include="reference.RFC.4272"?>
             <?rfc include="reference.RFC.5424"?>
+            <?rfc include="reference.RFC.6973"?>
             <reference anchor="UTR36" target="http://unicode.org/reports/tr36/">
                 <front>
                     <title>Unicode Security Considerations</title>

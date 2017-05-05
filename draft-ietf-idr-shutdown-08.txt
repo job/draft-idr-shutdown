@@ -6,9 +6,9 @@ IDR                                                          J. Snijders
 Internet-Draft                                                       NTT
 Updates: 4486 (if approved)                                     J. Heitz
 Intended status: Standards Track                                   Cisco
-Expires: October 24, 2017                                     J. Scudder
+Expires: November 6, 2017                                     J. Scudder
                                                                  Juniper
-                                                          April 22, 2017
+                                                             May 5, 2017
 
 
                BGP Administrative Shutdown Communication
@@ -42,7 +42,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 24, 2017.
+   This Internet-Draft will expire on November 6, 2017.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Snijders, et al.        Expires October 24, 2017                [Page 1]
+Snijders, et al.        Expires November 6, 2017                [Page 1]
 
-Internet-Draft                BGP Shutdown                    April 2017
+Internet-Draft                BGP Shutdown                      May 2017
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Snijders, et al.        Expires October 24, 2017                [Page 2]
+Snijders, et al.        Expires November 6, 2017                [Page 2]
 
-Internet-Draft                BGP Shutdown                    April 2017
+Internet-Draft                BGP Shutdown                      May 2017
 
 
 2.  Shutdown Communication
@@ -165,9 +165,9 @@ Internet-Draft                BGP Shutdown                    April 2017
 
 
 
-Snijders, et al.        Expires October 24, 2017                [Page 3]
+Snijders, et al.        Expires November 6, 2017                [Page 3]
 
-Internet-Draft                BGP Shutdown                    April 2017
+Internet-Draft                BGP Shutdown                      May 2017
 
 
    include out-of-band reference materials.  An example of a useful
@@ -184,10 +184,11 @@ Internet-Draft                BGP Shutdown                    April 2017
 
 4.  Error Handling
 
-   If an erroneous or malformed Shutdown Communication is received, a
-   message indicating this event SHOULD be logged for the attention of
-   the operator.  An erroneous or malformed Shutdown Communication
-   itself MAY be logged in a hexdump format.
+   If a Shutdown Communication with an invalid Length value, or an
+   invalid UTF-8 sequence is received, a message indicating this event
+   SHOULD be logged for the attention of the operator.  An erroneous or
+   malformed Shutdown Communication itself MAY be logged in a hexdump
+   format.
 
 5.  IANA Considerations
 
@@ -220,11 +221,14 @@ Internet-Draft                BGP Shutdown                    April 2017
 
 
 
-
-Snijders, et al.        Expires October 24, 2017                [Page 4]
+Snijders, et al.        Expires November 6, 2017                [Page 4]
 
-Internet-Draft                BGP Shutdown                    April 2017
+Internet-Draft                BGP Shutdown                      May 2017
 
+
+   Users of this mechanism should consider applying data minimization
+   practises as outlined in Section 6.1 [RFC6973] as a received Shutdown
+   Communication may be used at the receiver's discretion.
 
 7.  Implementation status - RFC EDITOR: REMOVE BEFORE PUBLICATION
 
@@ -270,17 +274,17 @@ Internet-Draft                BGP Shutdown                    April 2017
               DOI 10.17487/RFC4271, January 2006,
               <http://www.rfc-editor.org/info/rfc4271>.
 
+
+
+
+Snijders, et al.        Expires November 6, 2017                [Page 5]
+
+Internet-Draft                BGP Shutdown                      May 2017
+
+
    [RFC4486]  Chen, E. and V. Gillet, "Subcodes for BGP Cease
               Notification Message", RFC 4486, DOI 10.17487/RFC4486,
               April 2006, <http://www.rfc-editor.org/info/rfc4486>.
-
-
-
-
-Snijders, et al.        Expires October 24, 2017                [Page 5]
-
-Internet-Draft                BGP Shutdown                    April 2017
-
 
 8.2.  Informative References
 
@@ -291,6 +295,12 @@ Internet-Draft                BGP Shutdown                    April 2017
    [RFC5424]  Gerhards, R., "The Syslog Protocol", RFC 5424,
               DOI 10.17487/RFC5424, March 2009,
               <http://www.rfc-editor.org/info/rfc5424>.
+
+   [RFC6973]  Cooper, A., Tschofenig, H., Aboba, B., Peterson, J.,
+              Morris, J., Hansen, M., and R. Smith, "Privacy
+              Considerations for Internet Protocols", RFC 6973,
+              DOI 10.17487/RFC6973, July 2013,
+              <http://www.rfc-editor.org/info/rfc6973>.
 
    [UTR36]    Davis, M. and M. Suignard, "Unicode Security
               Considerations", Unicode Technical Report #36, August
@@ -314,6 +324,20 @@ Authors' Addresses
    Email: job@ntt.net
 
 
+
+
+
+
+
+
+
+
+
+Snijders, et al.        Expires November 6, 2017                [Page 6]
+
+Internet-Draft                BGP Shutdown                      May 2017
+
+
    Jakob Heitz
    Cisco
    170 West Tasman Drive
@@ -333,4 +357,36 @@ Authors' Addresses
 
 
 
-Snijders, et al.        Expires October 24, 2017                [Page 6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Snijders, et al.        Expires November 6, 2017                [Page 7]
