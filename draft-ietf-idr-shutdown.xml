@@ -194,8 +194,7 @@ below:
                 There are a number of security issues with UNICODE.
                 Implementers and operator are advised to review <xref target="UTR36">UNICODE TR36</xref> to learn about these issues.
                 UTF-8 "Shortest Form" encoding is REQUIRED to guard against the technical issues outlined in UTR36.
-                However, the visual spoofing due to character confusion still persists.
-                This specification minimizes the effects of visual spoofing by limiting the length of the Shutdown Communication.
+                This specification minimizes the effects of visual spoofing attacks by limiting the length of the Shutdown Communication.
             </t>
             <t>
                 Users of this mechanism should be aware that unless a transport that provides integrity is used for the BGP session in question, a Shutdown Communication message could be forged.
