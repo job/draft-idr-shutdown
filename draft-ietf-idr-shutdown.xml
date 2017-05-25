@@ -194,7 +194,10 @@ below:
                 There are a number of security issues with UNICODE.
                 Implementers and operator are advised to review <xref target="UTR36">UNICODE TR36</xref> to learn about these issues.
                 UTF-8 "Shortest Form" encoding is REQUIRED to guard against the technical issues outlined in UTR36.
-                This specification minimizes the effects of visual spoofing attacks by limiting the length of the Shutdown Communication.
+            </t>
+            <t>
+                As BGP Shutdown Communications are likely to appear in syslog output, there is a risk that carefully constructed Shutdown Communication might be formatted by receiving systems in a way to make them appear as additional syslog messages.
+                To limit the ability to mount such an attack, the mechanism described in this document limits the length of BGP Shutdown Communication fields to 128 octets in length.
             </t>
             <t>
                 Users of this mechanism should be aware that unless a transport that provides integrity is used for the BGP session in question, a Shutdown Communication message could be forged.
