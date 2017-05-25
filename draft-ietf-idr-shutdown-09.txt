@@ -210,8 +210,8 @@ Internet-Draft                BGP Shutdown                      May 2017
    there is a risk that carefully constructed Shutdown Communication
    might be formatted by receiving systems in a way to make them appear
    as additional syslog messages.  To limit the ability to mount such an
-   attack, the mechanism described in this document limits the length of
-   BGP Shutdown Communication fields to 128 octets in length.
+   attack, the BGP Shutdown Communication is limited to 128 octets in
+   length.
 
    Users of this mechanism should be aware that unless a transport that
    provides integrity is used for the BGP session in question, a
