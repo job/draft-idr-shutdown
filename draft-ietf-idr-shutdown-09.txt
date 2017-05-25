@@ -316,7 +316,7 @@ Appendix A.  Acknowledgements
    The authors would like to gratefully acknowledge Tom Scholl, David
    Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno Decraene, John
    Heasley, Peter van Dijk, Arjen Zonneveld, James Bensley, Susan Hares,
-   Saku Ytti, Lou Berger, and Alvaro Retana.
+   Saku Ytti, Lou Berger, Alvaro Retana, and Adam Roach.
 
 Authors' Addresses
 
