@@ -13,9 +13,9 @@
 <?rfc strict="yes"?>
 
 <rfc category="std"
-    docName="draft-ietf-idr-shutdown-09"
+    docName="draft-ietf-idr-shutdown-10"
     updates="4486"
-    ipr="pre5378Trust200902">
+    ipr="trust200902">
     <front>
         <title abbrev="BGP Shutdown">
             BGP Administrative Shutdown Communication
@@ -268,6 +268,9 @@ below:
         <section anchor="acknowledgements" title="Acknowledgements">
             <t>
                 The authors would like to gratefully acknowledge Tom Scholl, David Freedman, Jared Mauch, Jeff Haas, Peter Hessler, Bruno Decraene, John Heasley, Peter van Dijk, Arjen Zonneveld, James Bensley, Susan Hares, Saku Ytti, Lou Berger, Alvaro Retana, and Adam Roach.
+            </t>
+            <t>
+                The authors would like to thank Enke Chen and Vincent Gillet for their work on <xref target="RFC4486"/> and granting the related BCP 78 rights to the IETF Trust.
             </t>
         </section>
     </back>
